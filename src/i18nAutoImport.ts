@@ -9,7 +9,7 @@ type includeFilter = (id: string) => boolean
 
 export interface Options {
   locales: string[]
-  dts: string
+  dts?: string
   root?: string
   include?: FilterPattern | includeFilter
   exclude?: FilterPattern

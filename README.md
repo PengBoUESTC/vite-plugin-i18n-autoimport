@@ -6,7 +6,7 @@
 type includeFilter = (id: string) => boolean;
 export interface Options {
     locales: string[];  // i18n locale list
-    dts: string; // .d.ts file position, should include in tsconfig.json's include option; default i18n.d.sts
+    dts?: string; // .d.ts file position, should include in tsconfig.json's include option; default i18n.d.sts
     root?: string; // default cwd()
     include?: FilterPattern | includeFilter;  // filter
     exclude?: FilterPattern;
