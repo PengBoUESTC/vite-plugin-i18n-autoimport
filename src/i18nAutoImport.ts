@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs'
+import { writeFile } from 'node:fs'
 import { cwd } from 'node:process'
 import { join } from 'node:path'
 import { createFilter } from '@rollup/pluginutils'
@@ -17,9 +17,11 @@ export interface Options {
   genImportName?: (locale: string) => string
 }
 
+const name = 'vite-plugin-i18n-autoimport'
+
 // generate .d.ts
 const generateDts = (path: string) => {
-  writeFileSync(
+  writeFile(
     path,
     `
 import { useI18n } from 'vue-i18n'
@@ -30,6 +32,9 @@ declare global {
     {
       flag: 'w',
     },
+    (err) => {
+      console.log(`${name}: ${path} write error`, err)
+    }
   )
 }
 
@@ -42,8 +47,6 @@ const genImportNameDefault = (locale: string) => {
 }
 
 const includeFilterDefault = (id: string) => id.endsWith('.vue')
-
-const name = 'vite-plugin-i18n-autoimport'
 
 export function autoImport(options: Options): Plugin {
   const {
