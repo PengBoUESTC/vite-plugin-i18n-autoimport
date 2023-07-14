@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/PengBoUESTC/vite-plugin-i18n-autoimport/compare/v1.0.3...v1.0.4) (2023-07-14)
+
+
+### Features
+
+* change writeFileSync to writeFile ([8fa8e1a](https://github.com/PengBoUESTC/vite-plugin-i18n-autoimport/commit/8fa8e1aa55b872bb30f2fba3b2048884af34401b))
+
+
+
 ## [1.0.3](https://github.com/PengBoUESTC/vite-plugin-i18n-autoimport/compare/v1.0.2...v1.0.3) (2023-07-14)
 
 

@@ -6,15 +6,18 @@ const node_process_1 = require("node:process");
 const node_path_1 = require("node:path");
 const pluginutils_1 = require("@rollup/pluginutils");
 const magic_string_1 = require("magic-string");
+const name = 'vite-plugin-i18n-autoimport';
 // generate .d.ts
 const generateDts = (path) => {
-    (0, node_fs_1.writeFileSync)(path, `
+    (0, node_fs_1.writeFile)(path, `
 import { useI18n } from 'vue-i18n'
 declare global {
   export function defineI18n (): ReturnType<typeof useI18n>;
 }
   `, {
         flag: 'w',
+    }, (err) => {
+        console.log(`${name}: ${path} write error`, err);
     });
 };
 const getLocaleFsDefault = (locale) => {
@@ -24,7 +27,6 @@ const genImportNameDefault = (locale) => {
     return locale.split('-').join('_');
 };
 const includeFilterDefault = (id) => id.endsWith('.vue');
-const name = 'vite-plugin-i18n-autoimport';
 function autoImport(options) {
     const { locales, dts = 'i18n.d.ts', exclude, include = includeFilterDefault, root = (0, node_process_1.cwd)(), getLocaleFs = getLocaleFsDefault, genImportName = genImportNameDefault, } = options;
     if (!Array.isArray(locales) || !locales.length)
