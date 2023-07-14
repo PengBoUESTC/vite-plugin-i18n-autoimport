@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/PengBoUESTC/vite-plugin-i18n-autoimport/compare/v1.0.4...v1.0.5) (2023-07-14)
+
+
+### Features
+
+* dont write file if file exits ([e28b1f7](https://github.com/PengBoUESTC/vite-plugin-i18n-autoimport/commit/e28b1f73840141257c7c780ae4ce60dd4d423565))
+
+
+
 ## [1.0.4](https://github.com/PengBoUESTC/vite-plugin-i18n-autoimport/compare/v1.0.3...v1.0.4) (2023-07-14)
 
 

@@ -9,6 +9,8 @@ const magic_string_1 = require("magic-string");
 const name = 'vite-plugin-i18n-autoimport';
 // generate .d.ts
 const generateDts = (path) => {
+    if ((0, node_fs_1.existsSync)(path))
+        return;
     (0, node_fs_1.writeFile)(path, `
 import { useI18n } from 'vue-i18n'
 declare global {

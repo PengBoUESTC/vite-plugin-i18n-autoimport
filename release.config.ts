@@ -6,6 +6,6 @@ export default {
     build: 'build', // if exist, run build command
     changelog: 'changelog', //if exist, run changelog command
   },
-  tag: true // need git tag?
-  // release: true
+  tag: true, // need git tag?
+  release: true
 }
