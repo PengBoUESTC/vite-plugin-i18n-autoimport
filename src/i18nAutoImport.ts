@@ -1,4 +1,4 @@
-import { writeFile } from 'node:fs'
+import { writeFile, existsSync } from 'node:fs'
 import { cwd } from 'node:process'
 import { join } from 'node:path'
 import { createFilter } from '@rollup/pluginutils'
@@ -21,6 +21,7 @@ const name = 'vite-plugin-i18n-autoimport'
 
 // generate .d.ts
 const generateDts = (path: string) => {
+  if(existsSync(path)) return
   writeFile(
     path,
     `
