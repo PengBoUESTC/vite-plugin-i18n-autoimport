@@ -44,7 +44,6 @@ const { t } = defineI18n()
 </script>
 
 // compile to
-<script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import zh_CN from './lang/zh-CN.json';
 import zh_Hant from './lang/zh-Hant.json';
