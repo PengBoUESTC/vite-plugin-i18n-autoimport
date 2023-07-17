@@ -19,7 +19,10 @@ export interface Options {
 
 ```javascript
 import { autoImport } from 'vite-plugin-i18n-autoimport'
-
+const LOCALE_ENUM = {
+    zhCn: "zh-CN",
+    zhHant: "zh-Hant"
+}
 export default defineConfig(() => {
 
   return {
@@ -38,5 +41,19 @@ export default defineConfig(() => {
 ```javascript
 <script setup lang="ts">
 const { t } = defineI18n()
+</script>
+
+// compile to
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import zh_CN from './lang/zh-CN.json';
+import zh_Hant from './lang/zh-Hant.json';
+
+const { t } = useI18n({
+    messages: {
+        ['zh_CN']: zh_CN,
+        ['zh_Hant']: zh_Hant,
+    }
+})
 </script>
 ```
