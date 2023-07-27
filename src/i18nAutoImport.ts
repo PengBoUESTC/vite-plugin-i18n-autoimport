@@ -9,7 +9,7 @@ type includeFilter = (id: string) => boolean
 
 export interface Options {
   locales: string[]
-  dts?: string
+  dts?: string | false
   root?: string
   include?: FilterPattern | includeFilter
   exclude?: FilterPattern
@@ -73,8 +73,10 @@ export function autoImport(options: Options): Plugin {
   }
   const fsFilter = createFilter(includeArr, exclude)
 
-  const dtsPath = join(root, dts)
-  generateDts(dtsPath)
+  if(dts !== false) {
+    const dtsPath = join(root, dts)
+    generateDts(dtsPath)
+  }
 
   return {
     name,
