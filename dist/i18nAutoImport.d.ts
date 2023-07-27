@@ -2,7 +2,7 @@ import type { Plugin, FilterPattern } from 'vite'
 type includeFilter = (id: string) => boolean
 export interface Options {
   locales: string[]
-  dts?: string
+  dts?: string | false
   root?: string
   include?: FilterPattern | includeFilter
   exclude?: FilterPattern

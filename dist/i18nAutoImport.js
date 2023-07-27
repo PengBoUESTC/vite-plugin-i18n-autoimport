@@ -42,8 +42,10 @@ function autoImport(options) {
         includeArr = include;
     }
     const fsFilter = (0, pluginutils_1.createFilter)(includeArr, exclude);
-    const dtsPath = (0, node_path_1.join)(root, dts);
-    generateDts(dtsPath);
+    if (dts !== false) {
+        const dtsPath = (0, node_path_1.join)(root, dts);
+        generateDts(dtsPath);
+    }
     return {
         name,
         enforce: 'pre',
