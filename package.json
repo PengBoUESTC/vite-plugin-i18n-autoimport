@@ -8,7 +8,6 @@
     "build": "rimraf -rf dist && tsc",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "release": "release-pkg",
-    "postinstall": "npx simple-git-hooks",
     "test": "jest"
   },
   "keywords": [
