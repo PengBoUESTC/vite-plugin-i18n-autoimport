@@ -106,6 +106,7 @@ export function autoImport(options: Options): Plugin {
 
       return {
         code: s.toString(),
+        map: s.generateMap()
       }
     },
   }
