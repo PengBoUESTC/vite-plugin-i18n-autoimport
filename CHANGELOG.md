@@ -1,3 +1,7 @@
+# [1.1.0](https://github.com/PengBoUESTC/vite-plugin-i18n-autoimport/compare/v1.0.7...v1.1.0) (2023-09-11)
+
+
+
 ## [1.0.7](https://github.com/PengBoUESTC/vite-plugin-i18n-autoimport/compare/v1.0.6...v1.0.7) (2023-08-23)
 
 

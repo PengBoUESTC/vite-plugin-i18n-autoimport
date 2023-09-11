@@ -73,6 +73,7 @@ function autoImport(options) {
             });
             return {
                 code: s.toString(),
+                map: s.generateMap()
             };
         },
     };
